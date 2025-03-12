@@ -106,7 +106,7 @@
             left: 0;
         }
         #main {
-            font-size: 22px;
+            font-size: 20px; /* 22px에서 축소 */
             color: #ffffff;
             display: flex;
             flex-direction: column;
@@ -142,7 +142,7 @@
             opacity: 1;
         }
         #answer {
-            font-size: 25px;
+            font-size: 22px; /* 25px에서 축소 */
             margin-top: 20px;
             word-break: keep-all;
             max-width: 90%;
@@ -206,19 +206,23 @@
         /* 모바일 최적화 */
         @media (max-width: 768px) {
             body {
-                padding-top: 12vh; /* PC보다 약간 줄임 */
+                padding-top: 18vh; /* 12vh에서 증가 - 아래로 더 내림 */
             }
             
             #main input {
                 width: 85vw;
                 max-width: 500px;
-                font-size: 16px;
+                font-size: 15px; /* 16px에서 축소 */
                 padding: 12px 25px;
                 margin-bottom: 30px;
             }
             
             #header {
-                margin-bottom: 30px;
+                margin-bottom: 35px; /* 30px에서 증가 - 더 간격 벌림 */
+            }
+            
+            #answer {
+                font-size: 20px; /* 더 작게 */
             }
             
             /* 나머지 스타일 유지 */
@@ -230,11 +234,12 @@
             }
             body {
                 justify-content: flex-start;
-                padding-top: 10vh; /* 더 작은 화면에서는 더 줄임 */
+                padding-top: 15vh; /* 10vh에서 증가 - 아래로 더 내림 */
             }
             #main {
                 padding: 0;
-                margin-top: 0;
+                margin-top: 5vh; /* 추가: 본문 컨텐츠를 더 아래로 */
+                font-size: 18px; /* 더 작게 */
             }
             #comm {
                 left: 4vw;
@@ -242,17 +247,25 @@
                 top: auto;
             }
             #header {
-                margin-bottom: 20px;
+                margin-bottom: 25px; /* 20px에서 증가 */
                 padding: 0 10px;
             }
             #header img {
-                height: 80px;
+                height: 70px; /* 80px에서 축소 */
             }
             #header span {
-                font-size: 32px;
+                font-size: 28px; /* 32px에서 축소 */
             }
             #main input.transform-active {
                 transform: translateY(30vh) !important;
+            }
+            #main input {
+                font-size: 14px; /* 더 작게 */
+                padding: 10px 22px; /* 패딩 줄임 */
+            }
+            #answer {
+                font-size: 18px; /* 더 작게 */
+                margin-top: 15px; /* 좁게 */
             }
         }
         
@@ -273,6 +286,38 @@
         @media (min-height: 900px) {
             body {
                 padding-top: 20vh; /* 큰 화면에서는 상단 여백 더 늘림 */
+            }
+        }
+
+        /* 매우 작은 화면 최적화 - 추가 */
+        @media (max-width: 360px) {
+            body {
+                padding-top: 12vh; /* 더 작은 화면에서 조정 */
+            }
+            
+            #header {
+                margin-bottom: 20px;
+            }
+            
+            #header img {
+                height: 60px;
+            }
+            
+            #header span {
+                font-size: 24px;
+            }
+            
+            #main {
+                font-size: 16px;
+            }
+            
+            #answer {
+                font-size: 16px;
+            }
+            
+            #main input {
+                font-size: 13px;
+                padding: 8px 18px;
             }
         }
     </style>
